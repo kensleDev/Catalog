@@ -1,0 +1,27 @@
+import type { AttributifyAttributes } from '@unocss/preset-attributify';
+
+// See https://kit.svelte.dev/docs/types#app
+// for information about these interfaces
+// and what to do when importing types
+declare namespace App {
+  // interface Error {}
+  // interface Locals {}
+  // interface PageData {}
+  // interface Platform {}
+
+  interface IconCard {
+    title: string;
+    tagline: string;
+  }
+}
+
+// export interface IIconCard {
+// 	title: string;
+// 	tagline: string;
+// }
+
+declare global {
+  namespace svelte.JSX {
+    interface HTMLAttributes<T> extends AttributifyAttributes {}
+  }
+}
