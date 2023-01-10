@@ -12,6 +12,7 @@ declare namespace App {
   interface IconCard {
     title: string;
     tagline: string;
+    icon: string;
   }
 }
 

@@ -1,10 +1,54 @@
 #app {
   margin: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(
+    to right bottom,
+    rgb(250, 204, 21),
+    rgb(254, 240, 138),
+    rgb(199, 159, 27)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  font-family: 'Alef', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  margin: 0;
 }
 
 /* :root {
@@ -88,40 +132,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-
-body {
-  padding: 0;
-  margin: 0;
-  background-color: #b88f20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: 'Alef', sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-
-main {
-  margin: 0;
-}
