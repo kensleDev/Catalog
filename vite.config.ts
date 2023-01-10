@@ -4,12 +4,21 @@ import Unocss from 'unocss/vite';
 import { presetAttributify, presetIcons, presetUno } from 'unocss';
 import type { Theme } from '@unocss/preset-mini';
 import { presetBetterNestedColors } from 'unocss-preset-better-nested-colors';
+import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@lib': path.resolve(__dirname, './src/lib'),
+      '@ui': path.resolve(__dirname, './src/lib/ui'),
+    },
+  },
   plugins: [
     svelte(),
     Unocss({
+      safelist: ['hover-icon scale-110'],
       shortcuts: [
         {
           btn: 'px-4 py-1 rounded inline-block bg-primary text-white cursor-pointer tracking-wide op90 hover:op100 disabled:cursor-default disabled:bg-gray-600 disabled:!op50 disabled:pointer-events-none',
@@ -20,15 +29,7 @@ export default defineConfig({
           'square-btn-mark':
             'absolute h-2 w-2 bg-primary -right-0.2rem -top-0.2rem',
 
-          'bg-base': 'bg-white dark:bg-[#121212]',
-          'bg-overlay': 'bg-[#eee]:50 dark:bg-[#222]:50',
-          'bg-header': 'bg-gray-500:5',
-          'bg-active': 'bg-gray-500:8',
-          'bg-hover': 'bg-gray-500:20',
-          'border-base': 'border-gray-400:10',
-
-          'tab-button': 'font-light op50 hover:op80 h-full px-4',
-          'tab-button-active': 'op100 bg-gray-500:10',
+          'hover-icon': 'hover:scale-110 hover:relative hover:top--2',
 
           'modal-backdrop':
             'fixed top-0 bottom-0 right-0 left-0 bg-black/[.06]',
@@ -63,6 +64,11 @@ export default defineConfig({
             },
 
             secondary: {
+              DEFAULT: '#B89027', // "primary" => "#eee"
+              ':dark': '#222',
+            },
+
+            accent: {
               DEFAULT: '#B89027', // "primary" => "#eee"
               ':dark': '#222',
             },

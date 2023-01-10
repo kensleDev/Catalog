@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Hamburger from './Hamburger.svelte';
+	import Hamburger from '@ui/Hamburger.svelte';
   export let ShellStore
 
   const { menuOpen } = ShellStore 

@@ -12,9 +12,13 @@
     const svgEl = document.querySelector(`svg.${name}`)
     svgEl.style.fontSize = size + 'rem'
     svgEl.style.margin = margin + 'rem'
+    svgEl.classList.add('hover-icon')
+    console.log(svgEl.classList)
     console.log(svgEl.style.fontSize)
   })
 
 </script>
 
 {@html icon}
+
+

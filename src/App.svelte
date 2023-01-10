@@ -1,8 +1,18 @@
 <script lang="ts">
-  // import svelteLogo from './assets/svelte.svg'
-  // import Counter from './lib/Counter.svelte'
-  import LandingPage from './lib/landing-page/LandingPage.svelte'
+
+  import LandingPage from './lib/trophy-site/pages/LandingPage.svelte'
+  import AboutPage from './lib/trophy-site/pages/AboutPage.svelte'
+
+  import { Router, Route } from 'svelte-routing'
 </script>
 
+<Router>
+    <Route component={LandingPage} />
+    <Route path="/trophy/" component={LandingPage} />
+    <Route path="/trophy/about" component={AboutPage} />
 
-<LandingPage />
+    <!-- <Route path="/product/:id" let:params>
+        <Details id={params.id} />
+    </Route> -->
+</Router>
+
