@@ -35,19 +35,19 @@
 
 	{#if contentReady}
     <h1 
-		  class="text-5xl lg:text-6xl mb-5 shadow-2xl" 
+		  class="text-5xl lg:text-6xl mb-5 shadow-2xl transition-all" 
 			in:fly={{ x: -200, delay: 200 }}
 			out:fly={{ x: -200, delay: 0 }}
 	  >A Company</h1>
 
 		<h2 
-		  class="text-1xl mb-15 shadow-2xl" 
+		  class="text-1xl mb-15 shadow-2xl transition-all" 
 		  in:fly={{ x: -200, delay: 300 }}
 			out:fly={{ x: -200, delay: 30 }}
 		>A Catchy Tagline</h2>
 
 		<p 
-		  class="max-w-80 text-xs mb-10 md:mb-30 shadow-2xl" 
+		  class="max-w-80 text-xs mb-10 md:mb-30 shadow-2xl transition-all" 
 			in:fly={{ x: -200, delay: 500 }}
 			out:fly={{ x: -200, delay: 60 }}
 
@@ -68,7 +68,7 @@
 
 		<img 
 			src="https://media.discordapp.net/attachments/1006318431022358572/1062415572803006554/Juju_modern_trophy.png?width=441&height=671"
-			class="w-50 absolute top-80 right--15 md:right--20 md:top-30 md:block"
+			class="w-50 absolute top-80 right--15 sm:top-20 sm:w-75 md:w-100 md:right--20 md:top-20 md:block transition-all"
 			in:fly={{ x: 50, delay: 950 }}
 			out:fly={{ x: 100, delay: 120 }}
 		>

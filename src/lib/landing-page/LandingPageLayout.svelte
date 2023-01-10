@@ -9,7 +9,7 @@
 </script>
 
 <main
-	class="bg-primary w-full h-full text-secondary max-w-[95vw]  max-h-[98vh] rounded-xl p-5 lg:px-15 m-0 md:max-h-[90vh] lg:max-w-[900px] drop-shadow-2xl"
+	class="bg-primary w-full h-full text-secondary max-w-[95vw] rounded-xl p-5 m-0 drop-shadow-2xl md:max-h-[90vh] sm:px-15 lg:max-w-[900px] lg:px-15 "
 >
   <Navigation {ShellStore} />
 
