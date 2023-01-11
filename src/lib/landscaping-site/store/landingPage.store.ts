@@ -1,10 +1,59 @@
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
 const landingPageData = {
   backgroundImage:
-    'https://media.discordapp.net/attachments/1006318431022358572/1062540930848133180/landscaping-bg.png?width=1007&height=566',
+    "https://media.discordapp.net/attachments/1006318431022358572/1062540930848133180/landscaping-bg.png?width=1007&height=566",
 
-  title: 'Landscaping',
+  title: "Gemmas Garden",
+  tagline: "We ❤️ 🪴",
+  pictureCards: [
+    {
+      title: "Gardening",
+      tagline: "Year round service",
+      image: {
+        src: "/gardening icon.webp",
+        alt: "",
+      },
+    },
+    {
+      title: "Landscaping",
+      tagline: "Qualified landscapers",
+      image: {
+        src: "/landscaping icon.webp",
+        alt: "",
+      },
+    },
+    {
+      title: "Nursery",
+      tagline: "Stock many species of plant",
+      image: {
+        src: "/nursery icon.webp",
+        alt: "",
+      },
+    },
+  ],
+  iconCards: [
+    {
+      title: "Gardening",
+      tagline: "Year round service",
+      icon: "bullhorn",
+    },
+    {
+      title: "Landscaping",
+      tagline: "Qualified landscapers",
+      icon: "traffic",
+    },
+    {
+      title: "Nursery",
+      tagline: "Stock many species of plant",
+      icon: "bomb",
+    },
+  ],
+  description:
+    "Ea esse exercitation eiusmod occaecat in consectetur anim laborum deserunt proident do adipisicing. Fugiat labore laborum aliquip et. Labore ut minim exercitation duis exercitation adipisicing officia aliquip elit magna.",
+  button: {
+    text: "",
+  },
 
   // tagline: 'A Catchy Tagline',
   // description:
