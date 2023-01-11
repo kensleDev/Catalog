@@ -5,7 +5,7 @@
 	import { LandingPageStore } from '../store/landingPage.store'
 
 	let contentReady = false
-  export let location
+  // export let location
 
 	onMount(() => { contentReady = true })
 </script>

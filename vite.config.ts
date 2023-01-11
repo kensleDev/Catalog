@@ -52,6 +52,13 @@ export default defineConfig({
           'primary-deep': 'var(--c-primary-deep)',
           mis: 'var(--c-mis)',
         },
+
+        extend: {
+          backgroundImage: {
+            landscaping:
+              "url('https://media.discordapp.net/attachments/1006318431022358572/1062540930848133180/landscaping-bg.png?width=1007&height=566')",
+          },
+        },
       },
       presets: [
         presetUno(),
