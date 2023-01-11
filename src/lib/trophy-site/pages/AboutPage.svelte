@@ -3,6 +3,7 @@
   import MainLayout from "../LandingPageLayout.svelte"
   import IconCardList from "@ui/cards/iconCard/IconCardList.svelte"
 	import { onMount } from "svelte";
+	import { fade, fly } from 'svelte/transition'
 
   let contentReady = false
 

@@ -1,5 +1,4 @@
 import { writable } from 'svelte/store';
-import type { IconCard } from '../../../ui/types';
 
 const homepageData = {
   title: 'A Company',
@@ -31,4 +30,4 @@ const homepageData = {
     'https://media.discordapp.net/attachments/1006318431022358572/1062415572803006554/Juju_modern_trophy.png?width=441&height=671',
 };
 
-export const HomepageStore = writable(homepageData);
+export const LandingPageStore = writable(homepageData);
