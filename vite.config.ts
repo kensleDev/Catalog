@@ -31,6 +31,9 @@ export default defineConfig({
 
           'hover-icon': 'hover:scale-110 hover:relative hover:top--2',
 
+          surface: 'bg-primary text-secondary',
+          'flex-center': 'flex items-center justify-between',
+
           'modal-backdrop':
             'fixed top-0 bottom-0 right-0 left-0 bg-black/[.06]',
         },

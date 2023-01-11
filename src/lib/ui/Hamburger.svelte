@@ -10,6 +10,6 @@
     }
 </script>
 
-<Hamburger bind:open />
+<Hamburger bind:open --color="gold" />
 
 

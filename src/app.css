@@ -13,22 +13,15 @@
 body {
   padding: 1rem 0 1rem 0;
   margin: 0;
-  height: 100%;
-  background: linear-gradient(
-    to right bottom,
-    rgb(250, 204, 21),
-    rgb(254, 240, 138),
-    rgb(199, 159, 27)
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  min-height: 100vh;
   font-family: 'Alef', sans-serif;
+  overflow-x: hidden;
 }
 
-@media (min-width: 640px) {
+@media only screen and (min-width: 640px) {
   body {
-    height: 100vh;
+    height: 200vh;
   }
 }
 
@@ -56,4 +49,17 @@ li {
 
 main {
   margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgb(29, 38, 56);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8c7307;
+  outline: 1px solid rgb(29, 38, 56);
 }

@@ -1,5 +1,5 @@
 import type { AttributifyAttributes } from '@unocss/preset-attributify';
-
+import { IconCard } from './lib/ui/types';
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 // and what to do when importing types
@@ -8,12 +8,7 @@ declare namespace App {
   // interface Locals {}
   // interface PageData {}
   // interface Platform {}
-
-  interface IconCard {
-    title: string;
-    tagline: string;
-    icon: string;
-  }
+  IconCard;
 }
 
 // export interface IIconCard {
