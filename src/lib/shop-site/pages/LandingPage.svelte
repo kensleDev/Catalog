@@ -24,7 +24,7 @@
   </div>
   <div class="bg-red h-full" slot="titleBanner">Shop All</div>
   <div class="bg-blue h-full" slot="infoBanner">Info</div>
-  <div class="h-full section-border p-8" slot="productArea">
+  <div class="h-full" slot="productArea">
     <ProductCardList productCards={$LandingPageStore.productCards} />
   </div>
 </ShopPageLayout>

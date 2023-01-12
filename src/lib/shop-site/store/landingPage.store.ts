@@ -24,7 +24,7 @@ const landingPageData = {
       category: "Tees",
     },
     {
-      title: "A Nice Tee 3",
+      title: "A Nice Tee 3 with a really long name",
       price: 20,
       thumbnails: ["/shop/tee 3.webp"],
       collection: "All Collections",

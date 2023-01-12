@@ -5,7 +5,9 @@
   export let productCards: IProductCard[];
 </script>
 
-<ul class={`grid grid-cols-3 w-full gap-10 transition-all`}>
+<ul
+  class={`w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-3 transition-all min-w-[310px]`}
+>
   {#each productCards as pc}
     <li class="list-none">
       <ProductCard productCard={pc} />
