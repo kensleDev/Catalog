@@ -17,6 +17,7 @@
     "@unocss/preset-mini": "^0.48.3",
     "eslint": "^8.31.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "json-server": "^0.17.1",
     "prettier": "^2.8.2",
     "prettier-plugin-svelte": "^2.9.0",
     "prettier-plugin-tailwindcss": "^0.2.1",

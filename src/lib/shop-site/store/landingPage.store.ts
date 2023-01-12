@@ -1,6 +1,16 @@
 import { writable } from "svelte/store";
+import { FetchJson } from "../../pipes/fetch";
+import type { IProductCard } from "../types";
 
-const productCards = [];
+// const productCards: IProductCard[]
+
+const url = "http://localhost:3000/products";
+
+const products = await FetchJson<IProductCard[]>(url);
+
+const productCards = products;
+
+console.log(products);
 
 const landingPageData = {
   backgroundImage:
@@ -8,57 +18,9 @@ const landingPageData = {
 
   title: "Shop",
 
-  productCards: [
-    {
-      title: "A Nice Tee 1",
-      price: 20,
-      thumbnails: ["/shop/tee 1.webp"],
-      collection: "All Collections",
-      category: "Tees",
-    },
-    {
-      title: "A Nice Tee 2",
-      price: 20,
-      thumbnails: ["/shop/tee 2.webp"],
-      collection: "All Collections",
-      category: "Tees",
-    },
-    {
-      title: "A Nice Tee 3 with a really long name",
-      price: 20,
-      thumbnails: ["/shop/tee 3.webp"],
-      collection: "All Collections",
-      category: "Tees",
-    },
-    {
-      title: "A Nice Hoodie 1",
-      price: 30,
-      thumbnails: ["/shop/hoodie 1.webp"],
-      collection: "All Collections",
-      category: "Tees",
-    },
-    {
-      title: "A Nice Hoodie 2",
-      price: 30,
-      thumbnails: ["/shop/hoodie 2.webp"],
-      collection: "All Collections",
-      category: "Tees",
-    },
-    {
-      title: "A Nice Rucksack",
-      price: 15,
-      thumbnails: ["/shop/rucksack 1.webp"],
-      collection: "All Collections",
-      category: "Tees",
-    },
-    {
-      title: "A Nice Rucksack 2",
-      price: 15,
-      thumbnails: ["/shop/rucksack 2.webp"],
-      collection: "All Collections",
-      category: "Tees",
-    },
-  ],
+  productCollections: ["All Collections"],
+  productCategories: ["Tees, Hoodies, Accesories"],
+  productCards,
 
   // tagline: 'A Catchy Tagline',
   // description:
