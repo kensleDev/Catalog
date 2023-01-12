@@ -4,6 +4,7 @@
 
   import { LandingPageStore } from "../store/landingPage.store";
   import ShopPageLayout from "../ShopPageLayout.svelte";
+  import ProductCardList from "../../ui/cards/productCard/ProductCardList.svelte";
 
   let contentReady = false;
   // export let location
@@ -23,5 +24,7 @@
   </div>
   <div class="bg-red h-full" slot="titleBanner">Shop All</div>
   <div class="bg-blue h-full" slot="infoBanner">Info</div>
-  <div class="bg-purple h-full" slot="productArea">Products</div>
+  <div class="h-full section-border p-8" slot="productArea">
+    <ProductCardList productCards={$LandingPageStore.productCards} />
+  </div>
 </ShopPageLayout>

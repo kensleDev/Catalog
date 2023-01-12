@@ -36,7 +36,7 @@ export default defineConfig({
 
           surface: "bg-primary text-secondary",
           "flex-center": "flex items-center justify-between",
-
+          "section-border": "border-6 border-black border-solid rounded ",
           "modal-backdrop":
             "fixed top-0 bottom-0 right-0 left-0 bg-black/[.06]",
         },
