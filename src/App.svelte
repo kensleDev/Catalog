@@ -5,7 +5,7 @@
   import LandscapingPage from "./lib/landscaping-site/pages/LandingPage.svelte";
   import LandscapingAboutPage from "./lib/landscaping-site/pages/AboutPage.svelte";
 
-  import ShopPage from "./lib/ecommerce-site/pages/LandingPage.svelte";
+  import ShopPage from "./lib/shop-site/pages/LandingPage.svelte";
 
   import { Router, Route } from "svelte-routing";
 </script>

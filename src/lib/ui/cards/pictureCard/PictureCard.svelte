@@ -1,7 +1,6 @@
 <script lang="ts">
   import Image from "svelte-image";
-  export let pictureCard: any;
-  console.log({ pictureCard });
+  export let pictureCard;
 </script>
 
 <div class="icon-card flex flex-col items-center">
