@@ -4,6 +4,7 @@
 
   import { LandingPageStore } from "../store/landingPage.store";
   import PictureCardList from "../../ui/cards/pictureCard/PictureCardList.svelte";
+  import { Link } from "svelte-routing";
 
   let contentReady = false;
   // export let location
@@ -30,6 +31,9 @@
       <!--   direction="horizontal" -->
       <!-- /> -->
       <button>{$LandingPageStore.button.text}</button>
+
+      <Link to="/landscaping">Home</Link>
+      <Link to="/landscaping/about">About</Link>
     </div>
   {/if}
 </MainLayout>

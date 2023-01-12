@@ -4,6 +4,7 @@
   // import '@fontsource/alef';
   import { onMount } from "svelte";
   import { LandingPageStore } from "./store/landingPage.store";
+  import Transition from "@ui/Transition.svelte";
 
   // import { ShellStore } from './store/shell.store'
   // const { menuOpen } = ShellStore
@@ -25,7 +26,9 @@
 
 <main class="w-full">
   <!-- <main class={`surface w-full min-w-[320px] max-w-[95vw] h-[97vh] p-5 m-0 rounded-xl drop-shadow-2xl transition-all sm:px-15 sm:py-10 md:max-h-[90vh] lg:max-w-[900px] lg:px-15`}> -->
-  <slot />
+  <Transition>
+    <slot />
+  </Transition>
   <!-- <Navigation {ShellStore} />
 
   {#if !$menuOpen}
