@@ -6,6 +6,7 @@ import type { Theme } from "@unocss/preset-mini";
 import { presetBetterNestedColors } from "unocss-preset-better-nested-colors";
 import * as path from "path";
 import image from "svelte-image";
+import resolve from "rollup-plugin-node-resolve";
 
 // https://vitejs.dev/config/
 export default defineConfig({

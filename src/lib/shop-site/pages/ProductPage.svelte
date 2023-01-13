@@ -1,16 +1,39 @@
 <script lang="ts">
-  export let id;
+  import { onMount } from "svelte";
+  import { addToCart } from "../store/cart.store";
+  import { fetchProduct } from "../store/products.store";
+  import type { IProductDTO } from "../types";
+  import ContinueShoppingModal from "../ui/modals/ContinueShoppingModal.svelte";
 
-  import { CartPageStore, AddToCart } from "../store/cartPage.store";
+  export let id: string;
 
-  // const currentProudct =
+  let currentProduct: IProductDTO;
 
-  function handleAddToCart() {
-    AddToCart(id);
-  }
+  const modal = {
+    continueShopping: {
+      isOpen: false,
+      open: () => {
+        addToCart(currentProduct);
+        modal.continueShopping.isOpen = true;
+      },
+      close: () => {
+        modal.continueShopping.isOpen = false;
+      },
+    },
+  };
+
+  onMount(async () => {
+    currentProduct = await fetchProduct(id);
+  });
 </script>
 
 <h1>Product</h1>
+
 {id}
 
-<button on:click={handleAddToCart} />
+<ContinueShoppingModal
+  isOpen={modal.continueShopping.isOpen}
+  close={modal.continueShopping.close}
+/>
+
+<button on:click={modal.continueShopping.open}>Add to cart</button>

@@ -28,3 +28,14 @@ export async function fetchProducts(filter = "") {
     return d;
   });
 }
+
+export async function fetchProduct(id) {
+  // check if the product is in the cache
+  if (productsCache[id]) {
+    return productsCache[id];
+  }
+
+  const result = await pb.collection("products").getOne<IProductDTO>(id);
+
+  return result;
+}

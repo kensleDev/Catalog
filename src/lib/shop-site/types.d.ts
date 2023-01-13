@@ -58,3 +58,8 @@ interface IProductDTO {
   title: string;
   updated: string;
 }
+
+interface ICartItem {
+  product: IProductDTO;
+  quantity: number;
+}
