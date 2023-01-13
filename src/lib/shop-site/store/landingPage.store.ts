@@ -10,40 +10,40 @@ import { pb } from "../../pocketbase";
 
 export const LandingPageStore = writable(<ILandingPage>{});
 
-async function getProducts() {
-  const result = await pb
-    .collection("products")
-    .getList<IProductDTO>(1, 20, {});
+// async function getProducts() {
+//   const result = await pb
+//     .collection("products")
+//     .getList<IProductDTO>(1, 20, {});
 
-  return result.items;
-}
+//   return result.items;
+// }
 
 export async function fetchPageData() {
   const url = "http://localhost:3000/landingPage";
   const pageData = (await FetchJson<ILandingPage>(url)) as ILandingPage;
 
-  pageData.products = await getProducts();
+  // pageData.products = await getProducts();
   LandingPageStore.update((d) => pageData as ILandingPage);
 }
 
-export async function fetchFilterResults(filter) {
-  const url = "http://localhost:3000/landingPage";
+// export async function fetchFilterResults(filter) {
+//   const url = "http://localhost:3000/landingPage";
 
-  console.log({ filter });
+//   console.log({ filter });
 
-  const result = await pb.collection("products").getList<IProductDTO>(1, 20, {
-    filter,
-  });
+//   const result = await pb.collection("products").getList<IProductDTO>(1, 20, {
+//     filter,
+//   });
 
-  console.log({ result });
+//   console.log({ result });
 
-  LandingPageStore.update((d) => {
-    console.log({ newItems: result.items });
-    d.products = result.items;
-    console.log({ d });
-    return d;
-  });
-}
+//   LandingPageStore.update((d) => {
+//     console.log({ newItems: result.items });
+//     d.products = result.items;
+//     console.log({ d });
+//     return d;
+//   });
+// }
 
 // {
 //         "id": 0,

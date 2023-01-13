@@ -3,23 +3,24 @@
 
   import ProductCardList from "../../ui/cards/productCard/ProductCardList.svelte";
   import ShopPageLayout from "../layouts/ShopPageLayout.svelte";
-  import {
-    fetchFilterResults,
-    fetchPageData,
-    LandingPageStore,
-  } from "../store/landingPage.store";
+  import { fetchPageData, LandingPageStore } from "../store/landingPage.store";
+  import { fetchProducts, ProductsStore } from "../store/products.store";
   import SidebarTree from "../ui/SidebarTree.svelte";
 
   let contentReady = false;
+
+  $: {
+    console.log("ProductsStore: ", $ProductsStore);
+  }
 
   function handleSidebarClick(e) {
     console.log(e.detail);
 
     if (e.detail.parent === "categories") {
-      if (e.detail.source === "shop all") fetchFilterResults("");
-      else fetchFilterResults(`category = "${e.detail.source}"`);
+      if (e.detail.source === "shop all") fetchProducts("");
+      else fetchProducts(`category = "${e.detail.source}"`);
     } else if (e.detail.parent === "collections") {
-      fetchFilterResults(`collection = "${e.detail.source}"`);
+      fetchProducts(`collection = "${e.detail.source}"`);
     } else {
       console.error("Parent not recognised: " + e.detail.parent);
     }
@@ -28,6 +29,7 @@
   }
 
   onMount(async () => {
+    fetchProducts();
     await fetchPageData();
     contentReady = true;
   });
@@ -56,6 +58,6 @@
   </div>
   <div class="w-full max-h-30 bg-blue h-full z-1" slot="infoBanner">Info</div>
   <div class="h-full md:max-h-178 overflow-y-scroll" slot="productArea">
-    <ProductCardList productCards={$LandingPageStore.products} />
+    <ProductCardList productCards={$ProductsStore.products} />
   </div>
 </ShopPageLayout>

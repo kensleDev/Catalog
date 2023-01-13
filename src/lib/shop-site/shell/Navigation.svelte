@@ -9,7 +9,7 @@
     <Link to="/shop/all">SHOP ALL</Link>
     <Link to="/shop/essentials">ESSENTITALS</Link>
   </div>
-  <h3>Shop</h3>
+  <Link to="/shop">Shop</Link>
   <div class="left-btns">
     <Link to="/shop/about">ABOUT</Link>
     <Link to="/shop/faq">FAQ</Link>
