@@ -12,10 +12,6 @@
 
   let contentReady = false;
 
-  $: {
-    console.log($LandingPageStore);
-  }
-
   function handleSidebarClick(e) {
     console.log(e.detail);
 
