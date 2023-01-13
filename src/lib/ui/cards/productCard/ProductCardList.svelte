@@ -1,12 +1,8 @@
 <script lang="ts">
-  import type { IProductCard, IProductDTO } from "../../../shop-site/types";
+  import type { IProductDTO } from "../../../shop-site/types";
   import ProductCard from "./ProductCard.svelte";
 
   export let productCards: IProductDTO[] = [];
-
-  $: {
-    console.log({ productCards });
-  }
 </script>
 
 <ul
