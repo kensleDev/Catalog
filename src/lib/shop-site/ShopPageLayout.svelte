@@ -6,6 +6,12 @@
   import { LandingPageStore } from "./store/landingPage.store";
   import Navigation from "./shell/Navigation.svelte";
 
+  export let contentReady = false;
+
+  // $: {
+  //   console.log({ contentReady });
+  // }
+
   // import { ShellStore } from './store/shell.store'
   // const { menuOpen } = ShellStore
 
@@ -14,26 +20,44 @@
     bodyEl.style.background = "white";
     bodyEl.style.padding = "0";
 
-    const mainEl = document.querySelector("main");
-    const bg = $LandingPageStore.backgroundImage;
-    mainEl.style.backgroundImage = bg;
+    // const mainEl = document.querySelector("main");
+    // const bg = $LandingPageStore.backgroundImage;
+    // mainEl.style.backgroundImage = bg;
 
-    console.log(mainEl.style.backgroundImage);
+    // console.log(mainEl.style.backgroundImage);
   });
 </script>
 
 <main class="w-full max-w-[1024px]">
   <Navigation />
   <div class="page-container w-full">
-    <aside><slot name="aside" /></aside>
+    <aside>
+      {#if contentReady}
+        <slot name="aside" />
+      {:else}
+        <p>LOADING</p>
+      {/if}
+    </aside>
     <div class="title-banner">
-      <slot name="titleBanner" />
+      {#if contentReady}
+        <slot name="titleBanner" />
+      {:else}
+        <p>LOADING</p>
+      {/if}
     </div>
     <div class="info-banner ">
-      <slot name="infoBanner" />
+      {#if contentReady}
+        <slot name="infoBanner" />
+      {:else}
+        <p>LOADING</p>
+      {/if}
     </div>
     <article class="product-area">
-      <slot name="productArea" />
+      {#if contentReady}
+        <slot name="productArea" />
+      {:else}
+        <p>LOADING</p>
+      {/if}
     </article>
   </div>
 </main>

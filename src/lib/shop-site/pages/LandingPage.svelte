@@ -1,30 +1,44 @@
 <script lang="ts">
-  import MainLayout from "../ShopPageLayout.svelte";
   import { onMount } from "svelte";
 
-  import { LandingPageStore } from "../store/landingPage.store";
-  import ShopPageLayout from "../ShopPageLayout.svelte";
   import ProductCardList from "../../ui/cards/productCard/ProductCardList.svelte";
+  import ShopPageLayout from "../ShopPageLayout.svelte";
+  import { fetchPageData, LandingPageStore } from "../store/landingPage.store";
+  import SidebarTree from "../ui/SidebarTree.svelte";
 
   let contentReady = false;
-  // export let location
 
-  onMount(() => {
+  function handleSidebarClick(e) {
+    console.log();
+  }
+
+  onMount(async () => {
+    await fetchPageData();
     contentReady = true;
   });
 </script>
 
-<ShopPageLayout>
-  {#if contentReady}
-    <h1>{$LandingPageStore.title}</h1>
-  {/if}
+<ShopPageLayout {contentReady}>
+  <h1>{$LandingPageStore.title}</h1>
 
-  <div class="bg-yellow h-full border-black border-2" slot="aside">
-    Collections
+  <div
+    class="bg-yellow h-full border-black border-2 p-2 section-border"
+    slot="aside"
+  >
+    <SidebarTree
+      title="collections"
+      list={$LandingPageStore.productCollections}
+      on:click={handleSidebarClick}
+    />
+    <SidebarTree
+      title="categories"
+      list={$LandingPageStore.productCategories}
+      on:click={handleSidebarClick}
+    />
   </div>
   <div class="bg-red h-full" slot="titleBanner">Shop All</div>
   <div class="bg-blue h-full" slot="infoBanner">Info</div>
   <div class="h-full" slot="productArea">
-    <ProductCardList productCards={$LandingPageStore.productCards} />
+    <ProductCardList productCards={$LandingPageStore.products} />
   </div>
 </ShopPageLayout>

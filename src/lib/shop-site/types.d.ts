@@ -24,3 +24,30 @@ export interface IProductCard {
   collection: string;
   category: string;
 }
+
+export interface ILandingPage {
+  title: "";
+  productCollections: string[];
+  productCategories: string[];
+  products: IProductDTO[];
+}
+
+export interface FetchError {
+  status: number;
+  msg: string;
+  detail?: unknown;
+}
+
+interface IProductDTO {
+  category: string;
+  collectionId: string;
+  collectionName: string;
+  collections: string[];
+  created: string;
+  expand: Expand;
+  id: string;
+  price: number;
+  thumbnail: string;
+  title: string;
+  updated: string;
+}

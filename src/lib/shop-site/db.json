@@ -1,5 +1,18 @@
 {
-  "products": [
+  "landingPage": {
+    "title": "Shop All",
+    "productCollections": [
+      "All Collections"
+    ],
+    "productCategories": [
+      "Shop All",
+      "Tees",
+      "Hoodies",
+      "Accesories"
+    ],
+    "products": []
+  },
+  "tees": [
     {
       "id": 0,
       "title": "A Nice Tee 1",
@@ -39,7 +52,9 @@
       ],
       "collection": "All Collections",
       "category": "Tees"
-    },
+    }
+  ],
+  "hoodies": [
     {
       "id": 4,
       "title": "A Nice Hoodie 1",
@@ -79,7 +94,9 @@
       ],
       "collection": "All Collections",
       "category": "Hoodies"
-    },
+    }
+  ],
+  "accessories": [
     {
       "id": 8,
       "title": "A Nice Rucksack",

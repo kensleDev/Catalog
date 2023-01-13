@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { IProductCard } from "../../../shop-site/types";
+  import type { IProductCard, IProductDTO } from "../../../shop-site/types";
   import ProductCard from "./ProductCard.svelte";
 
-  export let productCards: IProductCard[];
+  export let productCards: IProductDTO[] = [];
 </script>
 
 <ul
