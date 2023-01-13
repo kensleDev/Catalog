@@ -26,6 +26,13 @@ export interface IProductCard {
 }
 
 export interface ILandingPage {
+  title: string;
+  productCollections: string[];
+  productCategories: string[];
+  products: IProductDTO[];
+}
+
+export interface IAboutPage {
   title: "";
   productCollections: string[];
   productCategories: string[];
