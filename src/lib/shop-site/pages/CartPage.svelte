@@ -1,6 +1,6 @@
 <script>
   import MainLayout from "../layouts/MainLayout.svelte";
-  import { CartStore, getCartTotal, updateQuantity } from "../store/cart.store";
+  import { CartStore, updateQuantity } from "../store/cart.store";
 </script>
 
 <MainLayout>
@@ -25,7 +25,7 @@
       {/if}
     {/each}
     <div class="total">
-      <h4>Total: ₹ {getCartTotal()}</h4>
+      <h4>Total: ₹ {$CartStore.total}</h4>
     </div>
   </div>
 </MainLayout>

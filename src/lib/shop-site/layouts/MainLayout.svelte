@@ -4,7 +4,6 @@
   // import '@fontsource/alef';
   import { onMount } from "svelte";
   import Navigation from "../shell/Navigation.svelte";
-  import Modal from "svelte-simple-modal";
 
   export let contentReady = false;
 
