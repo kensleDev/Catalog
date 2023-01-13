@@ -3,8 +3,7 @@
   // import Navigation from './shell/Navigation.svelte'
   // import '@fontsource/alef';
   import { onMount } from "svelte";
-  import { LandingPageStore } from "./store/landingPage.store";
-  import Navigation from "./shell/Navigation.svelte";
+  import Navigation from "../shell/Navigation.svelte";
 
   export let contentReady = false;
 
@@ -28,7 +27,7 @@
   });
 </script>
 
-<main class="w-full max-w-[1024px]">
+<main class="w-full max-w-[1400px]">
   <Navigation />
   <div class="page-container w-full">
     <aside>
@@ -79,7 +78,7 @@
 
   @media screen and (min-width: 768px) {
     .page-container {
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 250px 1fr;
       grid-template-rows: 100px 100px 1fr;
       padding: 1rem 2rem 1rem 2rem;
     }

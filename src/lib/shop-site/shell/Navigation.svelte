@@ -3,7 +3,7 @@
 </script>
 
 <navigation
-  class="items-center justify-between w-full px-5 py-5 hidden md:flex"
+  class=" h-20 bg-red items-center justify-between w-full px-5 py-5 hidden md:flex"
 >
   <div class="left-btns">
     <Link to="/shop/all">SHOP ALL</Link>

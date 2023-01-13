@@ -17,7 +17,7 @@
 <MainLayout>
   {#if contentReady}
     <div
-      class="intro-ribbon bg-black/[0.3] w-full max-w-9/10 mx-auto p-5 md:max-w-120 md:mr-10 md:px-20 md:pt-30"
+      class="text-white intro-ribbon bg-black/[0.3] w-full max-w-9/10 mx-auto p-5 md:max-w-120 md:mr-10 md:px-20 md:pt-30"
     >
       <p>Welcome to</p>
       <h1 class="mb-10">{$LandingPageStore.title}</h1>

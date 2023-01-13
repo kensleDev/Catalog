@@ -1,16 +1,17 @@
 <script>
-  import Navigation from './shell/Navigation.svelte'
-	import 'uno.css';
-	// import '@fontsource/alef';
-  import {onMount} from 'svelte'
+  import Navigation from "./shell/Navigation.svelte";
+  import "uno.css";
+  // import '@fontsource/alef';
+  import { onMount } from "svelte";
 
-  import { ShellStore } from './store/shell.store'
-  const { menuOpen } = ShellStore
+  import { ShellStore } from "./store/shell.store";
+  const { menuOpen } = ShellStore;
 
   onMount(() => {
-    const bodyEl = document.querySelector('body')
-    bodyEl.style.background = 'linear-gradient(to right bottom, rgb(250, 204, 21), rgb(254, 240, 138), rgb(199, 159, 27))'
-  })
+    const bodyEl = document.querySelector("body");
+    bodyEl.style.background =
+      "linear-gradient(to right bottom, rgb(250, 204, 21), rgb(254, 240, 138), rgb(199, 159, 27))";
+  });
 </script>
 
 <main
@@ -19,6 +20,6 @@
   <Navigation {ShellStore} />
 
   {#if !$menuOpen}
-	  <slot />
+    <slot />
   {/if}
 </main>

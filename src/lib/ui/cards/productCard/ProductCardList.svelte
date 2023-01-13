@@ -3,6 +3,10 @@
   import ProductCard from "./ProductCard.svelte";
 
   export let productCards: IProductDTO[] = [];
+
+  $: {
+    console.log({ productCards });
+  }
 </script>
 
 <ul

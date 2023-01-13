@@ -26,8 +26,23 @@ export async function fetchPageData() {
   LandingPageStore.update((d) => pageData as ILandingPage);
 }
 
-export async function fetchFilterResults(query: string) {
+export async function fetchFilterResults(filter) {
   const url = "http://localhost:3000/landingPage";
+
+  console.log({ filter });
+
+  const result = await pb.collection("products").getList<IProductDTO>(1, 20, {
+    filter,
+  });
+
+  console.log({ result });
+
+  LandingPageStore.update((d) => {
+    console.log({ newItems: result.items });
+    d.products = result.items;
+    console.log({ d });
+    return d;
+  });
 }
 
 // {

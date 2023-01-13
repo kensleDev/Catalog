@@ -8,7 +8,10 @@
   const dispatch = createEventDispatcher();
 
   function handleClick(e) {
-    dispatch("click", { source: e.target.textContent.trim(), parent: title });
+    dispatch("click", {
+      source: e.target.textContent.trim().toLowerCase(),
+      parent: title,
+    });
   }
 </script>
 
