@@ -2,7 +2,7 @@ import { writable } from "svelte/store";
 import { FetchJson, getPageData, isFetchError } from "../../pipes/fetch";
 import type { ILandingPage, IProductCard, IProductDTO } from "../types";
 import type { FetchError } from "../../shop-site/types";
-import { pb } from "../../pocketbase";
+// import { pb } from "../../pocketbase";
 
 // const productCards: IProductCard[]
 // const productCards = products;

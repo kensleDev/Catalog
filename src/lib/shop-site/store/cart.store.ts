@@ -13,6 +13,59 @@ const cartData: ICartStore = {
 
 export const CartStore = writable(cartData);
 
+export function addToCart(product: IProductDTO) {
+  CartStore.update((d) => {
+    const { isInCart, cartItemIndex } = isProductInCart(d.cart, product);
+
+    if (isInCart) {
+      d.cart[cartItemIndex].quantity++;
+      calcTotal(d.cart);
+      console.log({ cart: d.cart });
+      return d;
+    }
+
+    d.cart = [...d.cart, { product, quantity: 1 }];
+    calcTotal(d.cart);
+    console.log({ cart: d.cart });
+    return d;
+  });
+}
+
+export function updatCartItemQuantity(cartItem, quantity) {
+  CartStore.update((d) => {
+    const { isInCart, cartItemIndex } = isProductInCart(
+      d.cart,
+      cartItem.product
+    );
+
+    if (isInCart) {
+      d.cart[cartItemIndex].quantity =
+        d.cart[cartItemIndex].quantity + quantity;
+      calcTotal(d.cart);
+      return d;
+    }
+
+    calcTotal(d.cart);
+    return d;
+  });
+}
+
+export function removeCartItem(product) {
+  CartStore.update((d) => {
+    d.cart = d.cart.filter((item) => item.product.id !== product.id);
+    calcTotal(d.cart);
+    return d;
+  });
+}
+
+export function clearCart() {
+  CartStore.update((d) => {
+    d.cart = [];
+    calcTotal(d.cart);
+    return d;
+  });
+}
+
 function isProductInCart(
   cart: ICartStore["cart"],
   product: IProductDTO
@@ -34,59 +87,6 @@ function calcTotal(cart: ICartItem[]) {
 
   CartStore.update((d) => {
     d.total = total;
-    return d;
-  });
-}
-
-export function addToCart(product: IProductDTO) {
-  CartStore.update((d) => {
-    const { isInCart, cartItemIndex } = isProductInCart(d.cart, product);
-
-    if (isInCart) {
-      d.cart[cartItemIndex].quantity++;
-      calcTotal(d.cart);
-      console.log({ cart: d.cart });
-      return d;
-    }
-
-    d.cart = [...d.cart, { product, quantity: 1 }];
-    calcTotal(d.cart);
-    console.log({ cart: d.cart });
-    return d;
-  });
-}
-
-export function updateQuantity(cartItem, quantity) {
-  CartStore.update((d) => {
-    const { isInCart, cartItemIndex } = isProductInCart(
-      d.cart,
-      cartItem.product
-    );
-
-    if (isInCart) {
-      d.cart[cartItemIndex].quantity =
-        d.cart[cartItemIndex].quantity + quantity;
-      calcTotal(d.cart);
-      return d;
-    }
-
-    calcTotal(d.cart);
-    return d;
-  });
-}
-
-export function removeItem(product) {
-  CartStore.update((d) => {
-    d.cart = d.cart.filter((item) => item.product.id !== product.id);
-    calcTotal(d.cart);
-    return d;
-  });
-}
-
-export function clearCart() {
-  CartStore.update((d) => {
-    d.cart = [];
-    calcTotal(d.cart);
     return d;
   });
 }
